@@ -23,6 +23,7 @@ function getRandomHexColor() {
     });
 
     function createBoxes(amount) {
+      destroyBoxes();
       for (let i = 0; i < amount; i+=1) {
         const box = document.createElement('div');
         const size = 30 + i * 10;

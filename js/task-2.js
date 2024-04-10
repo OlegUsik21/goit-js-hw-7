@@ -14,19 +14,10 @@ const images = [
 ];
 
 const gallery = document.querySelector("ul.gallery");
+let galleryHTML = '';
 
 images.forEach(image => {
-
-  const listItem = document.createElement('li');
-  listItem.classList.add('gallery-item');
-  
-  const img = document.createElement('img');
-  img.src = image.url;
-  img.alt = image.alt;
-  
-  listItem.append(img);
-  
-  gallery.append(listItem);
+  galleryHTML += `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}" class="gallery-img"></li>`;
 });
 
-document.body.append(gallery);
+gallery.insertAdjacentHTML("beforeend", galleryHTML);
